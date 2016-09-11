@@ -1,6 +1,7 @@
-# SQS
-
-# dynamoDB
-table name - clearing_house
-partition key - ticker
-sort key - time_stamp
+# create docker image
+docker build -t theemadnes/clearing-house-data-generator .
+# run locally in interactive mode; expect it to fail due to lack of perms
+docker run -it --rm --name my-running-app theemadnes/clearing-house-data-generator
+# logged in via docker login
+# copy data generator image to docker hub
+docker push theemadnes/clearing-house-data-generator
