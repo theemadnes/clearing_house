@@ -1,3 +1,4 @@
+## for data generator
 # create docker image
 docker build -t theemadnes/clearing-house-data-generator .
 # run locally in interactive mode; expect it to fail due to lack of perms
@@ -5,3 +6,12 @@ docker run -it --rm --name my-running-app theemadnes/clearing-house-data-generat
 # logged in via docker login
 # copy data generator image to docker hub
 docker push theemadnes/clearing-house-data-generator
+
+## for data processor
+# create docker image
+docker build -t theemadnes/clearing-house-data-processor .
+# run locally in interactive mode; expect it to fail due to lack of perms
+docker run -it --rm --name my-running-app theemadnes/clearing-house-data-processor
+# logged in via docker login
+# copy data generator image to docker hub
+docker push theemadnes/clearing-house-data-processor
