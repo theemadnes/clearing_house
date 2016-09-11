@@ -1,5 +1,6 @@
 # data generator script that generates trade messages that get published to an SQS queue
 # before running, make sure sqs_queue_name points to an SQS queue that you have appropriate permissions to write to
+# also configure the proper aws_region
 
 import random
 import boto3
@@ -12,7 +13,8 @@ sqs_queue_name = 'clearing_house'
 ticker_symbols = ['amzn', 'msft', 'amd', 'intc', 'yhoo']
 stock_operations = ['buy', 'sell']
 
-sqs_client = boto3.resource('sqs')
+aws_region = 'us-west-2'
+sqs_client = boto3.resource('sqs', region_name=aws_region)
 sqs_queue = sqs_client.get_queue_by_name(QueueName=sqs_queue_name)
 
 while True:
