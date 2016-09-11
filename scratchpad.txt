@@ -1,0 +1,6 @@
+# SQS
+
+# dynamoDB
+table name - clearing_house
+partition key - ticker
+sort key - time_stamp
