@@ -1,0 +1,32 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "clearing-house-generator-logging",
+            "image": "theemadnes/clearing-house-data-generator",
+            "memory": "128",
+            "essential": true,
+            "portMappings": [],
+            "environment": null,
+            "mountPoints": null,
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "clearingHouse",
+                    "awslogs-region": "us-west-2",
+                    "awslogs-stream-prefix": "clearingHouse"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null
+        }
+    ],
+    "volumes": [],
+    "networkMode": "bridge",
+    "family": "clearing-house-generator-logging",
+    "taskRoleArn": "arn:aws:iam::789320537004:role/clearing-house-role"
+}
